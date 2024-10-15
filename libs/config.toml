@@ -1,0 +1,11 @@
+[node]
+detect-drivers = true
+hub = "http://localhost:4444"
+
+[server]
+port = 5555  # Or whichever port you'd like to use for your node
+
+[driver-configuration]
+# These are the paths to your specific drivers
+webdriver.chrome.driver = "D:/JetBrains/Projects/selenium-assign/resources/chromedriver.exe"
+webdriver.gecko.driver = "D:/JetBrains/Projects/selenium-assign/resources/geckodriver.exe"

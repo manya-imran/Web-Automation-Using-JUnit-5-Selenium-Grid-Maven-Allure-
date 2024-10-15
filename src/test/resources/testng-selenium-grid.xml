@@ -1,0 +1,32 @@
+<suite name="Selenium Grid Suite"  parallel="classes">
+    <test name="ChromeTest">
+        <parameter name="browser" value="chrome" />
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="Login Test"/>-->
+<!--            </run>-->
+<!--        </groups>-->
+
+        <classes>
+            <class name="login.LoginTest" />
+            <class name="CartRetention.cartRetentionCheck"/>
+            <class name="Checkout.CartManageTest"/>
+            <class name="Checkout.PurchaseTest"/>
+            <class name="ProductDetails.productDetailsTests"/>
+            <class name="Products.AddToCart"/>
+            <class name="Products.SortTests"/>
+        </classes>
+    </test>
+    <test name="FirefoxTest">
+        <parameter name="browser" value="firefox" />
+        <classes>
+            <class name="login.LoginTest" />
+            <class name="CartRetention.cartRetentionCheck"/>
+            <class name="Checkout.CartManageTest"/>
+            <class name="Checkout.PurchaseTest"/>
+            <class name="ProductDetails.productDetailsTests"/>
+            <class name="Products.AddToCart"/>
+            <class name="Products.SortTests"/>
+        </classes>
+    </test>
+</suite>
