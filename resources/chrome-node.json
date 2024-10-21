@@ -1,0 +1,21 @@
+{
+  "capabilities": [
+    {
+      "browserName": "chrome",
+      "maxInstances": 8
+    }
+  ],
+  "configuration": {
+    "cleanUpCycle": 2000,
+    "timeout": 30000,
+    "maxSession": 8,
+    "register": true,
+    "registerCycle": 5000,
+    "hub": "http://localhost:4444/grid/register",
+    "nodeStatusCheckTimeout": 5000,
+    "nodePolling": 5000,
+    "role": "node",
+    "unregisterIfStillDownAfter": 60000,
+    "downPollingLimit": 2
+  }
+}

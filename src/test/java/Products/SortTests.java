@@ -1,19 +1,27 @@
 package Products;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.Test;
-import org.testng.xml.dom.Tag;
+//import org.testng.annotations.Test;
+//import org.testng.xml.dom.Tag;
 import testautomatinau.BaseTest;
 import org.testng.Assert.*;
 
-import static org.testng.Assert.assertEquals;
+//import static org.testng.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Tag;
 
 public class SortTests extends BaseTest {
     private static final Logger logger = LoggerFactory.getLogger(SortTests.class);
 
     @Test
-    @Tag(name="Sorting Test")
+    @Tag("SortingTest")
+    @Description("Test Description: Sorting Elements in the Products Catalog")
+    @Step("Checking Successful Addition using Products Page")
     public void testSort() {
         logger.info("Sorting Test Name AtoZ Started");
         assertEquals(productsPage.sortByNameAZ(), "Sauce Labs Backpack");

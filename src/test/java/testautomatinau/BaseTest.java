@@ -2,6 +2,9 @@ package testautomatinau;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -9,6 +12,9 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+//import org.junit.jupiter.params.ParameterizedTest;
+//import org.junit.jupiter.params.provider.ValueSource;
+
 
 import pages.LoginPage;
 import pages.ProductsPage;
@@ -31,10 +37,16 @@ public class BaseTest {
     public BaseTest() {
         logger.info("Base Test Instantiated");
     }
-    //@Test(groups = {"Login Test"})
-    @BeforeClass
-    @Parameters("browser") // Add this to specify browser parameter
-    public void setUp(String browser) throws MalformedURLException {
+
+    //@BeforeClass
+    @BeforeEach
+
+//    @ParameterizedTest
+//    @ValueSource(strings = {"chrome", "firefox"})
+    //@Parameters("browser") // Add this to specify browser parameter
+    public void setUp() throws MalformedURLException {
+        String nodeURL = "http://localhost:4444/wd/hub";
+        String browser = System.getProperty("browser", "chrome");
         logger.info("BeforeClass setup is running...");
         try {
             loadDataFromJSON("D:/JetBrains/Projects/selenium-assign/src/test/resources/data.json");
@@ -71,7 +83,8 @@ public class BaseTest {
         username = jsonNode.get(0).get("username").asText();
         password = jsonNode.get(0).get("password").asText();
     }
-    @AfterClass
+    //@AfterClass
+    @AfterEach
     public void tearDown(){
         System.out.println("AfterClass");
         if (driver != null) {

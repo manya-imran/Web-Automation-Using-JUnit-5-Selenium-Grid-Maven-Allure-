@@ -8,7 +8,7 @@ public class Main {
 
         BaseTest test = new BaseTest();
         try{
-            test.setUp("chrome");
+            test.setUp();
         }catch (MalformedURLException e){
             e.printStackTrace();
         }

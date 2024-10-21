@@ -7,16 +7,26 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
-import org.testng.xml.dom.Tag;
+//import org.testng.annotations.Test;
+//import org.testng.xml.dom.Tag;
 import pages.*;
 import testautomatinau.BaseTest;
 
-import static org.testng.Assert.*;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Tag;
+
+import io.qameta.allure.*;
+
 public class LoginTest extends BaseTest {
     private static final Logger logger = LoggerFactory.getLogger(LoginTest.class);
-    @Test(groups = "Login Test")
+    @Test()
+    @Tag("LoginTest")
+    @Description("Test Description: Verifying the login functionality")
 
+    @Step("Checking Successful Login")
     public void loginTest() {
 
         assertEquals(productsPage.getHeaderSuccess(), "Products", "Error: Header doesn't match");

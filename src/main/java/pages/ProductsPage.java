@@ -35,11 +35,13 @@ public class ProductsPage {
 
     }
     public ProductDetailsPage clickBackpack() {
-        WebElement backPack = driver.findElement(By.xpath("//*[@id=\"item_4_title_link\"]"));
+        WebElement backPack;
         // Scroll to the element
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", backPack);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"item_4_title_link\"]")));
+
         try{
+            backPack = driver.findElement(By.xpath("//*[@id=\"item_4_title_link\"]"));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", backPack);
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"item_4_title_link\"]")));
             backPack.click();
 
         } catch (Exception e) {
