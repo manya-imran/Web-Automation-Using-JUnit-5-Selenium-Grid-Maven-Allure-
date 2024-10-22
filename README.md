@@ -76,7 +76,7 @@ java "-Dwebdriver.chrome.driver=D:path-to-chromedriver.exe" -jar "path-to-seleni
 java "-Dwebdriver.gecko.driver=D:path-to-geckodriver.exe" -jar "path-to-selenium-server-4.25.0.jar" node --config "path-to-node-config-file-firefox-node.json -p=5556"
 ```
 After that your environment is ready to execute tests.
-To execute test you need to create a test environment having your Grid and tests to do that go to the configuration and select Edit Configuration add your Maven project and hit Run. MAke your your Selenium nodes are up and running. After running that your test case results will be stored in \target\allure-results folder.
+To execute test you need to create a test environment having your Grid and tests. To do that go to the configuration and select 'Edit Configuration' add your Maven project and hit Run. Make sure your Selenium nodes are up and running. After running that your test case results will be stored in \target\allure-results folder.
 
 This brings us to our next step reporting. We are using Allure reporting to generate high end grahs and accurate HTML reports. Intstall allure in your command line using:
 ```
